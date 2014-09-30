@@ -1728,9 +1728,26 @@ In&nbsp;[1]:
     <div class="input_area">
 <div class="highlight"><pre><span class="o">!</span>rm -fR docs
 <span class="o">!</span>mkdir docs
+<span class="o">!</span>rm docsample/*.pyc
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+rm: cannot remove ‘docsample/*.pyc’: No such file or directory
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1763,6 +1780,8 @@ In&nbsp;[1]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="about-me">About Me</h1>
+<p>I&#39;m currently a developer at Internet Solutions, have been writing code since I was 11, and a professional developer for over 10 years now.</p>
+<p>I&#39;m also a dad... <img src="images/ben_small.jpg" alt=""></p>
 </div>
 </div>
 </div>
@@ -1935,21 +1954,7 @@ In&nbsp;[1]:
 </div>
 </div>
 </div>
-    </div>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                </section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="self-documenting-code">Self Documenting code</h1>
-</div>
-</div>
-</div><div class="fragment">
+    </div><div class="fragment">
     
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1983,7 +1988,7 @@ In&nbsp;[1]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="self-documenting-code">Self documenting code</h1>
+<h1 id="self-documenting-code-cont">Self documenting code - cont</h1>
 </div>
 </div>
 </div><div class="fragment">
@@ -2758,7 +2763,7 @@ In&nbsp;[15]:
 
 <div class="output_text output_subarea output_pyout">
 <pre>
-[&apos;aha.py&apos;, &apos;__init__.pyc&apos;, &apos;__init__.py&apos;, &apos;aha.pyc&apos;]
+[&apos;aha.py&apos;, &apos;__init__.py&apos;]
 </pre>
 </div>
 
@@ -2802,11 +2807,9 @@ In&nbsp;[16]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-total 12
--rw-r--r-- 1  423 Sep 30 12:41 aha.py
--rw-r--r-- 1 1037 Sep 30 14:00 aha.pyc
--rw-r--r-- 1    0 Sep 30 12:47 __init__.py
--rw-r--r-- 1  131 Sep 30 14:00 __init__.pyc
+total 4
+-rw-r--r-- 1 423 Sep 30 12:41 aha.py
+-rw-r--r-- 1   0 Sep 30 12:47 __init__.py
 
 </pre>
 </div>
@@ -3035,6 +3038,9 @@ done
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="autodoc">autodoc</h3>
+<p><a href="sphinx-doc.org/ext/autodoc.html">autodoc Documentation</a></p>
+<p>This extension can import the modules you are documenting, and pull in documentation from docstrings in a semi-automatic way.</p>
+<p>The docstrings must of course be written in correct reStructuredText. You can then use all of the usual Sphinx markup in the docstrings.</p>
 </div>
 </div>
 </div>
@@ -3046,6 +3052,8 @@ done
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="doctests">doctests</h3>
+<p><a href="sphinx-doc.org/ext/doctest.html">doctest Documentation</a></p>
+<p>This extension allows you to test snippets in the documentation in a natural way. It works by collecting specially-marked up code blocks and running them as tests when building the docs.</p>
 </div>
 </div>
 </div>
@@ -3060,7 +3068,7 @@ done
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="autodoc-helpers">autodoc - helpers</h2>
+<h1 id="autodoc-helpers">autodoc - helpers</h1>
 </div>
 </div>
 </div>
@@ -3158,7 +3166,7 @@ Module contents
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="autodoc-sample">Autodoc - sample</h1>
+<h1 id="autodoc-sample">autodoc - sample</h1>
 </div>
 </div>
 </div><div style=display:none>
@@ -3256,7 +3264,7 @@ done
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="autodoc-sample">Autodoc - sample</h1>
+<h1 id="autodoc-sample">autodoc - sample</h1>
 <p>Lets have a look at the generated docs:</p>
 <h2><a href="docs/html2/index.html">Autodoc docs - DEMO</a></h2>
 </div>
@@ -3275,7 +3283,59 @@ done
 <h1 id="so-what-does-this-buy-us-">So, what does this buy us?</h1>
 </div>
 </div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Some documentation is done is one place (as part of the code).</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Documentation is a bit easier to keep up-to-date, since it is directly part of the codebase.</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Documentation is hosted by the codebase, so there is a known place where to look for it.</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>You could auto-generate docs as part of your staging/testing deployment.</li>
+</ul>
+</div>
+</div>
+</div>
+    </div>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </section>
     </section><section>
@@ -3287,6 +3347,50 @@ done
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="keeping-docs-up-to-date-">Keeping docs up to date.</h1>
+<p>Of course, this doesn&#39;t mean that docs will automatically be kept up-to-date, so effort must still be taken to keep docs up-to-date.</p>
+<p>Some methods are:</p>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Have more of the docs generate in more specific ways</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Implement doctests to raise a flag when your docs are out-of-date.</li>
+</ul>
+</div>
+</div>
+</div>
+    </div>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                </section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="generating-docs-off-tests-code">Generating docs off tests/code</h1>
+<p>Using some of the demonstrated self-populating docstring methods, you could even have the property lazily run a test to get the output.</p>
+<p>You can also have a look at the various and helpful <a href="https://bitbucket.org/birkenfeld/sphinx-contrib">spinx-contrib plugins.</a></p>
 </div>
 </div>
 </div>
@@ -3300,7 +3404,16 @@ done
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="doctests">DocTests</h1>
+<h1 id="doctests">Doctests</h1>
+<pre><code>.. testcode::
+
+   1+1        # this will give no output!
+   print 2+2  # this will give output
+
+.. testoutput::
+
+   4
+</code></pre>
 </div>
 </div>
 </div>
@@ -3314,57 +3427,12 @@ done
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="generating-docs-off-tests-">Generating docs off tests.</h1>
+<h1 id="done-">Done?</h1>
 </div>
 </div>
 </div>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                </section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[23]:
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
+                
 </div>
 </div>
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # docsample documentation build configuration file, created by
-# sphinx-quickstart on Tue Sep 30 14:18:18 2014.
+# sphinx-quickstart on Tue Sep 30 15:03:14 2014.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
