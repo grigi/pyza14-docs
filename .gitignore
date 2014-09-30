@@ -1,3 +1,4 @@
 .pyenv
 .ipynb_checkpoints
+*.pyc
 
