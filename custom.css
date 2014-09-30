@@ -13,6 +13,7 @@ body {
   background-color: #f7fbfc; }
 
 .reveal {
+  font-size: 25px;
   color: #333333; }
 
 
@@ -23,6 +24,7 @@ body {
 
 .reveal .slides > section,
 .reveal .slides > section > section {
+  padding: 0px;
   line-height: 1.2em;
   font-weight: inherit; }
 
