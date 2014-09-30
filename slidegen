@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ipython nbconvert Documentation.ipynb --to slides --reveal-prefix=reveal-js $@
