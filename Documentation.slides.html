@@ -2453,7 +2453,7 @@ greet(char)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="docstrings-as-properties">Docstrings as properties</h2>
-<div align="right">*probably dangerous</div>
+<div align="right">*possibly dangerous</div>
 </div>
 </div>
 </div><div class="fragment">
@@ -2461,7 +2461,7 @@ greet(char)
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[83]:
+In&nbsp;[97]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2471,12 +2471,12 @@ In&nbsp;[83]:
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fget</span><span class="o">.</span><span class="n">__get__</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">owner</span><span class="p">)()</span>
     
 <span class="k">class</span> <span class="nc">greet</span><span class="p">():</span>
-    <span class="sd">&#39;&#39;&#39;Docstring for Class&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;Unused Docstring for Class&#39;&#39;&#39;</span>
     <span class="nd">@ClassProperty</span>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">__doc__</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">print</span> <span class="s">&quot;GENERATING DOCSTRING&quot;</span>
-        <span class="k">return</span> <span class="s">&#39;The generated docstring&#39;</span>
+        <span class="k">print</span> <span class="s">&quot;GENERATING DOCSTRING LAZILY!</span><span class="se">\n</span><span class="s">&quot;</span>
+        <span class="k">return</span> <span class="s">&quot;The generated docstring&quot;</span>
 </pre></div>
 
 </div>
@@ -2489,7 +2489,7 @@ In&nbsp;[83]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[84]:
+In&nbsp;[98]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2507,7 +2507,8 @@ In&nbsp;[84]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-GENERATING DOCSTRING
+GENERATING DOCSTRING LAZILY!
+
 Help on class greet in module __main__:
 
 class greet
@@ -2552,9 +2553,9 @@ class greet
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="restructuredtext">reStructuredText</h1>
-<p><br/>
+<p><br/><br/>
 <img src="images/rst.png" alt=""></p>
-<p><br/><br/><br/></p>
+<p><br/><br/></p>
 <h2 align="middle"><a href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a></h2>
 </div>
 </div>
@@ -2570,6 +2571,21 @@ class greet
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="rest-formatting">reST - Formatting</h2>
+<p>reStructuredText is a markup that has been designed to be more capable, it has common formatting rules:</p>
+<pre><code>Captions are underlined
+-----------------------
+
+* Bullet list
+
+  1. Nested numbered list
+
+*Italic* **Bold** ``Text``
+
+..
+   Commented block
+
+etc...
+</code></pre>
 </div>
 </div>
 </div>
@@ -2584,6 +2600,21 @@ class greet
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="rest-directives">reST - Directives</h2>
+<p>reStructuredText also has directives, which are the more powerful aspect. You can define your own <code>directive_types</code>.</p>
+<pre><code>.. directive_type: name
+   :paramaters:
+
+   content
+</code></pre><p>Example of a csv-table directive:</p>
+<pre><code>.. csv-table:: Frozen Delights!
+   :header: &quot;Treat&quot;, &quot;Quantity&quot;, &quot;Description&quot;
+   :widths: 15, 10, 30
+
+   &quot;Albatross&quot;, 2.99, &quot;On a stick!&quot;
+   &quot;Crunchy Frog&quot;, 1.49, &quot;If we took the bones out, it wouldn&#39;t be
+   crunchy, now would it?&quot;
+   &quot;Gannet Ripple&quot;, 1.99, &quot;On a stick!&quot;
+</code></pre>
 </div>
 </div>
 </div>
@@ -2617,7 +2648,15 @@ class greet
 <h1 id="sphinx-plugins">Sphinx Plugins</h1>
 <p>Many forms:</p>
 <p>One can control the documentation generated using directives.</p>
-<p>Some libraries will generate reST documentation that you can include in the documentation project.</p>
+<pre><code>.. toctree::
+   :maxdepth: 2
+
+   intro
+   strings
+   (many more documents listed here)
+</code></pre><p>Some libraries will generate reST documentation that you can include in the documentation project.</p>
+<pre><code>.. include:: behave/steps_usage.rst
+</code></pre>
 </div>
 </div>
 </div>
