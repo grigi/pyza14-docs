@@ -1735,22 +1735,6 @@ In&nbsp;[1]:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-rm: cannot remove ‘docsample/*.pyc’: No such file or directory
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     </div></section>
     </section><section>
@@ -1761,7 +1745,7 @@ rm: cannot remove ‘docsample/*.pyc’: No such file or directory
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 align="center" class="title">How Python helps writing documentation less painful</h1>
+<h1 align="center" class="title">Less painfull documentation with Python</h1>
 
 <p><h3 align="right" class="subtitle">By Nickolas Grigoriadis</h3></p>
 <h5 align="right" class="subtitle">Internet Solutions</h5>
@@ -2046,9 +2030,10 @@ rm: cannot remove ‘docsample/*.pyc’: No such file or directory
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<pre><code># Returns a list of sub-objects
-dir()
-</code></pre>
+<ul>
+<li>Returns a list of sub-objects<br/>
+<strong>dir()</strong></li>
+</ul>
 </div>
 </div>
 </div>
@@ -2059,9 +2044,24 @@ dir()
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<pre><code># Generates help text on object
-help()
-</code></pre>
+<ul>
+<li>Generates help text on object<br/>
+<strong>help()</strong></li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Docstrings<br/>
+Docstrings is the first string literal after a function/class definition.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2226,21 +2226,6 @@ class enumerate(object)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="docstrings">Docstrings</h1>
-<p>Docstrings is the first string literal after a function/class definition.</p>
-</div>
-</div>
-</div>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                </section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Basic-docstring:">Basic docstring:<a class="anchor-link" href="#Basic-docstring:">&#182;</a></h2>
 </div>
 </div>
@@ -2254,11 +2239,11 @@ In&nbsp;[4]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Prints a greeting to &lt;char&gt;</span>
+<span class="sd">    Prints a greeting to &lt;person&gt;</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">print</span> <span class="s">&quot;Greetings, </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">char</span>
+    <span class="k">print</span> <span class="s">&quot;Greetings, </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">person</span>
 </pre></div>
 
 </div>
@@ -2291,8 +2276,8 @@ In&nbsp;[5]:
 <pre>
 Help on function greet in module __main__:
 
-greet(char)
-    Prints a greeting to &lt;char&gt;
+greet(person)
+    Prints a greeting to &lt;person&gt;
 
 
 </pre>
@@ -2327,8 +2312,8 @@ In&nbsp;[6]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
-    <span class="k">print</span> <span class="s">&quot;Greetings, </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">char</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;Greetings, </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">person</span>
 <span class="n">greet</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="s">&quot;Programatically set docstring&quot;</span>
 </pre></div>
 
@@ -2362,7 +2347,7 @@ In&nbsp;[7]:
 <pre>
 Help on function greet in module __main__:
 
-greet(char)
+greet(person)
     Programatically set docstring
 
 
@@ -2398,19 +2383,19 @@ In&nbsp;[8]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
-<div class="highlight"><pre><span class="n">CHARACTERS</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;milkman&#39;</span><span class="p">,</span> <span class="s">&#39;raz&#39;</span><span class="p">,</span> <span class="s">&#39;secret agent&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">PERSONS</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;milkman&#39;</span><span class="p">,</span> <span class="s">&#39;raz&#39;</span><span class="p">,</span> <span class="s">&#39;secret agent&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Prints a greeting to &lt;char&gt; if &lt;char&gt; is recognised, else it tells you to go away.</span>
+<span class="sd">    Prints a greeting to &lt;person&gt; if &lt;person&gt; is recognised, else it tells you to go away.</span>
 <span class="sd">    Allowed chars are:</span>
-<span class="sd">    {char_list}</span>
+<span class="sd">    {person_list}</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CHARACTERS</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">person</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CHARACTERS</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">&quot;Go away!&quot;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s">&quot;Greetings, </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">char</span>
-<span class="n">greet</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">greet</span><span class="o">.</span><span class="n">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">char_list</span><span class="o">=</span><span class="n">CHARACTERS</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">&quot;Greetings, </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">person</span>
+<span class="n">greet</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">greet</span><span class="o">.</span><span class="n">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person_list</span><span class="o">=</span><span class="n">PERSONS</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2443,8 +2428,8 @@ In&nbsp;[9]:
 <pre>
 Help on function greet in module __main__:
 
-greet(char)
-    Prints a greeting to &lt;char&gt; if &lt;char&gt; is recognised, else it tells you to go away.
+greet(person)
+    Prints a greeting to &lt;person&gt; if &lt;person&gt; is recognised, else it tells you to go away.
     Allowed chars are:
     (&apos;milkman&apos;, &apos;raz&apos;, &apos;secret agent&apos;)
 
@@ -3477,7 +3462,8 @@ done
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="done-">Done?</h1>
+<h1 id="done-">Done!</h1>
+<h2 id="any-questions-">Any Questions?</h2>
 </div>
 </div>
 </div>
