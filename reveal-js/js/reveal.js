@@ -361,8 +361,8 @@ var Reveal = (function(){
 			dom.controlsRight = toArray( document.querySelectorAll( '.navigate-right' ) );
 			dom.controlsUp = toArray( document.querySelectorAll( '.navigate-up' ) );
 			dom.controlsDown = toArray( document.querySelectorAll( '.navigate-down' ) );
-			dom.controlsPrev = toArray( document.querySelectorAll( '.navigate-prev' ) );
-			dom.controlsNext = toArray( document.querySelectorAll( '.navigate-next' ) );
+			dom.controlsPrev = toArray( document.querySelectorAll( '.navigate-left' ) );
+			dom.controlsNext = toArray( document.querySelectorAll( '.navigate-right' ) );
 		}
 
 	}
@@ -592,8 +592,8 @@ var Reveal = (function(){
 				dom.controlsRight.forEach( function( el ) { el.addEventListener( eventName, onNavigateRightClicked, false ); } );
 				dom.controlsUp.forEach( function( el ) { el.addEventListener( eventName, onNavigateUpClicked, false ); } );
 				dom.controlsDown.forEach( function( el ) { el.addEventListener( eventName, onNavigateDownClicked, false ); } );
-				dom.controlsPrev.forEach( function( el ) { el.addEventListener( eventName, onNavigatePrevClicked, false ); } );
-				dom.controlsNext.forEach( function( el ) { el.addEventListener( eventName, onNavigateNextClicked, false ); } );
+				dom.controlsPrev.forEach( function( el ) { el.addEventListener( eventName, onNavigateLeftClicked, false ); } );
+				dom.controlsNext.forEach( function( el ) { el.addEventListener( eventName, onNavigateRightClicked, false ); } );
 			} );
 		}
 
@@ -630,8 +630,8 @@ var Reveal = (function(){
 				dom.controlsRight.forEach( function( el ) { el.removeEventListener( eventName, onNavigateRightClicked, false ); } );
 				dom.controlsUp.forEach( function( el ) { el.removeEventListener( eventName, onNavigateUpClicked, false ); } );
 				dom.controlsDown.forEach( function( el ) { el.removeEventListener( eventName, onNavigateDownClicked, false ); } );
-				dom.controlsPrev.forEach( function( el ) { el.removeEventListener( eventName, onNavigatePrevClicked, false ); } );
-				dom.controlsNext.forEach( function( el ) { el.removeEventListener( eventName, onNavigateNextClicked, false ); } );
+				dom.controlsPrev.forEach( function( el ) { el.removeEventListener( eventName, onNavigateLeftClicked, false ); } );
+				dom.controlsNext.forEach( function( el ) { el.removeEventListener( eventName, onNavigateRightClicked, false ); } );
 			} );
 		}
 
@@ -2585,8 +2585,8 @@ var Reveal = (function(){
 	function onNavigateRightClicked( event ) { event.preventDefault(); navigateRight(); }
 	function onNavigateUpClicked( event ) { event.preventDefault(); navigateUp(); }
 	function onNavigateDownClicked( event ) { event.preventDefault(); navigateDown(); }
-	function onNavigatePrevClicked( event ) { event.preventDefault(); navigatePrev(); }
-	function onNavigateNextClicked( event ) { event.preventDefault(); navigateNext(); }
+	function onNavigatePrevClicked( event ) { event.preventDefault(); navigateLeft(); }
+	function onNavigateNextClicked( event ) { event.preventDefault(); navigateRight(); }
 
 	/**
 	 * Handler for the window level 'hashchange' event.
