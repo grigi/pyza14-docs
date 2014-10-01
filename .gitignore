@@ -1,4 +1,5 @@
 .pyenv
 .ipynb_checkpoints
 *.pyc
-
+Documentation_local.slides.html
+libs
