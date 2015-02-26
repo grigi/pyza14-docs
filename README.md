@@ -2,5 +2,5 @@
 PyConZA 2014 Documentation presentation.
 
 ## Slides:
-[View Slides Online](https://rawgit.com/grigi/pyza14-docs/master/Documentation.slides.html) 
+[View Slides Online](http://rawgit.com/grigi/pyza14-docs/master/Documentation.slides.html) 
 
